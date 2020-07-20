@@ -19,10 +19,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+#FOR SECURITY　Randomize
+from django.core.management.utils import get_random_secret_key
+secret_key = get_random_secret_key()
+SECRET_KEY = secret_key
+
 try:
     from .local_settings import *
 except ImportError:
+    #for Internet
     pass
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -77,7 +82,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#DjangoのデフォルトのデータベースはSQLite3
+#Default Database is SQLite3
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -108,9 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-#言語の設定
+
 LANGUAGE_CODE = 'ja'
-#タイムゾーンの設定
+
 TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
@@ -123,8 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#静的ファイルのパスの設定
+#'pass of static file'setting
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#PythonAnywhereにデプロイする場合
+#if deploy to PythonAnywhere
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
