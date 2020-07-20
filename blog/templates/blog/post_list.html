@@ -1,24 +1,35 @@
 <html>
 
     <head>
-        <title>とある技術的なページ</title>
+        <title>Yoga9_test</title>
     </head>
-
+{{ posts }}
     <body>
         <div>
-            <h1><a href="https://gfkari.gamedbs.jp/girl/detail/43?_cid=10003665">櫻井明音のぶろぐ♪</a></h1>
+            <h1><a href="https://pbs.twimg.com/profile_images/471983293349367808/QmDzb6cM.jpeg">＞＞R18 入口はこちら＜＜</a></h1>
         </div>
 
         <div>
+        {% for post in posts %}
+            {{ post }}
+        {% endfor %}
             <p>Sevuredpublished: 14.06.2014, 12:14</p>
             <h2><a href="">clickしてマルウェアをインストール</a></h2>
             <p>Aenean eu leo quam.</p>
             <h6><a href="https://www.dcexpo.jp/">DCEXPO2204で会いましょう</a></h6>
         </div>
 
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+
         <div>
             <p>公開日: 2204/06/14, 13:66</p>
-            <h2><a href="">可愛い女の子たちに会いたい方はこちら！</a></h2>
+            <h2><a href="https://livedoor.blogimg.jp/magsokublog/imgs/7/8/78d47644.jpg">可愛い女の子たちに会いたい方はこちら！</a></h2>
             <p> ※現在申し込み多数に付き応募停止中です。 </p>
         </div>
     </body>
