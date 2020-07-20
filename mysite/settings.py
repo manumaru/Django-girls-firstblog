@@ -21,7 +21,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ##★Gitを見回るGitガーディアンなるものから、秘密鍵丸見えだぜ！メールきて調べてコメントアウト。→localファイルつくってこれだけそっちに
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'zeyt=ipd@ot&%j_h@n7uimj-)1$+73!jt5nlj%a)0ethju%33t'
 try:
     from .local_settings import *
 except ImportError:
@@ -120,7 +119,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
