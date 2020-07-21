@@ -36,6 +36,7 @@ Djangoブロック式コメントアウト。
             <div class="date">
                 {{ post.published_date }}
             </div>
+            {# ここでタイトルクリックして、詳細ページとべる（urls.py→view.py） #}
                 <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>

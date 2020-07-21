@@ -14,7 +14,16 @@ endif入れないといけないのはだるいな。
             </div>
         {% endif %}
         <h2>{{ post.title }}</h2>
-        {# あれば改行 #}
+        {# プレーンテキストの改行をhtmlでもするように<br>化 #}
         <p>{{ post.text|linebreaksbr }}</p>
+
+        {# 管理者でログインしているユーザーにのみ、表示されるようにする #}
+        {% if user.is_authenticated %}
+
+        {# 鉛筆マークでの編集ボタン #}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+
+        {% endif %}
+
     </div>
 {% endblock %}

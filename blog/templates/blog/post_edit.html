@@ -1,0 +1,14 @@
+{#Base拡張#}
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>New post</h2>
+    {#ここのmethod=POSTで、フォームのすべてのフィールドはrequest.POSTに格納されるっぽい。#}
+    <form method='POST' class="post-form">{% csrf_token %}\
+
+        {# formを表示 #}
+        {{ form.as_p}}
+        {#make button#}
+        <button type='submit' class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

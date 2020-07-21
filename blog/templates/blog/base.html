@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Django Girls blog</title>
+    <title>脳波理研救命所</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -11,6 +11,15 @@
 
 <body>
     <div class="page-header">
+
+        {# 管理者でログインしているユーザーにのみ、表示されるようにする #}
+        {% if user.is_authenticated %}
+
+        {#post_newのurl.pyへ飛ばすプラスボタン　そこからviewsへいき、post_new関数のelseで編集ページのpost_edit.htmlになる#}
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {#あ！まさか！　"/"でカレントディレクトリ的な！TOPページいくのか！なるほどね！！　#}
+        {% endif %}
+
         <h1><a href="/">これは、とある男の、螺旋の物語。</a></h1>
     </div>
     <div class="content container">
