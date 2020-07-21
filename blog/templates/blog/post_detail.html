@@ -1,0 +1,20 @@
+{# ‟拡張構文” #}
+{% extends 'blog/base.html' %}
+
+
+{% comment %}
+endif入れないといけないのはだるいな。
+{% endcomment %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ post.title }}</h2>
+        {# あれば改行 #}
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
